@@ -1,0 +1,13 @@
+int score=0;
+void setup(){
+size(700,400);}
+void draw() {
+  background(250);
+  fill(0,0,0);
+textSize(45);
+text("Score "+ score,500,40);
+  }
+void mouseClicked() {
+  if (score == score) {
+    score=score+1; }
+}
