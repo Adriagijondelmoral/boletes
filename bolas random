@@ -1,0 +1,13 @@
+float x=0;
+float y=0;
+
+void setup(){
+  size(600,800);
+  background(0,0);
+}
+void draw(){
+  fill(250,250,250);
+  ellipse(random(600),random(800),2,2);
+ 
+
+}
