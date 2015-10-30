@@ -1,4 +1,24 @@
-void setup(){
-background(0,0,0);
-size(800,600);
+int X = 0;
+  int y =0;
+  
+void setup() {
+  size(800, 600);}
+ 
+void draw() {
+  background(200);
+  rect(X,y,20, 20); }
+ 
+void keyPressed() {
+  if (keyCode == RIGHT) {
+    X = X + 3;
+  }
+  if (keyCode == LEFT) {
+    X = X - 3;
+  }
+  if (keyCode == DOWN) {
+    y = y + 3;
+  }
+  if (keyCode == UP) {
+    y = y - 3;
+  } 
 }
