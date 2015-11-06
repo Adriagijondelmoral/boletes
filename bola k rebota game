@@ -1,24 +1,25 @@
 void setup()
 {
-  size(400,400);
+  size(600,400);
 }
 
 float pilotaX = 200;
 float pilotaY = 100;
 float speedX = 10;
 float speedY = 0;
+int miss= 0;
 int score = 0;
 
 void draw()
 {
-  if(mousePressed) ; score = 0;
-  float paddle =1000/(score+10);
+  if(mousePressed) { score = 0; miss =0; }
+  float paddle = 1000/(score+10);
   if(pilotaX < 0 || pilotaX >width) speedX = -speedX;
   if (pilotaY > height){
   speedY = -speedY;
   float distance = abs(mouseX - pilotaX);
   if(distance < paddle) score+=1;
- 
+  else miss += 1;
 } else speedY += 1;
  
  pilotaX += speedX;
@@ -28,7 +29,9 @@ void draw()
  fill(200,100,50);
  ellipse (pilotaX, pilotaY, 50,50);
  fill(50,100,200);
- rect (mouseX-100, height-10, 2*paddle,10);
+ rect (mouseX-paddle, height-10, 2*paddle,10);
  
+ fill(0);
  text("score:  " + score, 10,20);
+ text ("miss:  " + miss,10,40);
  }
